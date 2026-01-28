@@ -1,24 +1,227 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>JR HOME | Catálogo</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <h1>JR HOME</h1>
-    <p>Personaliza tu mueble a tu estilo</p>
-  </header>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <section id="salas">
-    <h2>Salas</h2>
-    <div class="producto">
-      <h3>Sala Imperial</h3>
-      <p>Personaliza tu mueble a tu estilo</p>
-      <p><strong>Desde $3.200.000</strong></p>
-      <a href="https://wa.me/573218782158" target="_blank">Cotizar</a>
-    </div>
-  </section>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: #000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      padding: 30px;
+    }
+
+    .menu button {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      color: #fff;
+      padding: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .menu button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #333;
+    }
+
+    .top-text {
+      margin-bottom: 15px;
+      color: #ccc;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .actions {
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .actions a, .actions button {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 18px;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .actions a:hover, .actions button:hover {
+      background: #d4d4d4;
+    }
+  </style>
+</head>
+
+<body>
+
+<header id="inicio">
+  <h1>JR HOME</h1>
+  <p>Personaliza tu mueble a tu estilo</p>
+</header>
+
+<div class="menu">
+  <button onclick="openSection('salas')">Salas</button>
+  <button onclick="openSection('comedores')">Comedores</button>
+  <button onclick="openSection('mesas')">Mesas centro / noche</button>
+  <button onclick="openSection('tocadores')">Tocadores</button>
+  <button onclick="openSection('camas')">Camas</button>
+  <button onclick="openSection('espejos')">Espejos de lujo</button>
+  <button onclick="openSection('centros')">Centros de entretenimiento</button>
+</div>
+
+<!-- SECCIONES -->
+<section id="salas" class="active-section">
+  <p class="top-text">
+    Combina sofás, sillas y módulos como prefieras. El precio varía según tu elección.
+  </p>
+  <div class="gallery"></div>
+  <div class="actions">
+    <a href="https://wa.me/57TU_NUMERO" target="_blank">Consultar por WhatsApp</a>
+    <button onclick="goHome()">Volver al inicio</button>
+  </div>
+</section>
+
+<section id="comedores">
+  <p class="top-text">
+    Elige mesa y sillas a tu gusto. Personaliza medidas y acabados.
+  </p>
+  <div class="gallery"></div>
+  <div class="actions">
+    <a href="https://wa.me/57TU_NUMERO" target="_blank">Consultar por WhatsApp</a>
+    <button onclick="goHome()">Volver al inicio</button>
+  </div>
+</section>
+
+<section id="mesas">
+  <p class="top-text">
+    Mesas funcionales que se adaptan a tu espacio.
+  </p>
+  <div class="gallery"></div>
+  <div class="actions">
+    <a href="https://wa.me/57TU_NUMERO" target="_blank">Consultar por WhatsApp</a>
+    <button onclick="goHome()">Volver al inicio</button>
+  </div>
+</section>
+
+<section id="tocadores">
+  <p class="top-text">
+    Tocadores modernos, elegantes y personalizados.
+  </p>
+  <div class="gallery"></div>
+  <div class="actions">
+    <a href="https://wa.me/57TU_NUMERO" target="_blank">Consultar por WhatsApp</a>
+    <button onclick="goHome()">Volver al inicio</button>
+  </div>
+</section>
+
+<section id="camas">
+  <p class="top-text">
+    Camas diseñadas para confort y estilo.
+  </p>
+  <div class="gallery"></div>
+  <div class="actions">
+    <a href="https://wa.me/57TU_NUMERO" target="_blank">Consultar por WhatsApp</a>
+    <button onclick="goHome()">Volver al inicio</button>
+  </div>
+</section>
+
+<section id="espejos">
+  <p class="top-text">
+    Espejos de lujo que elevan cualquier espacio.
+  </p>
+  <div class="gallery"></div>
+  <div class="actions">
+    <a href="https://wa.me/57TU_NUMERO" target="_blank">Consultar por WhatsApp</a>
+    <button onclick="goHome()">Volver al inicio</button>
+  </div>
+</section>
+
+<section id="centros">
+  <p class="top-text">
+    Centros de entretenimiento a medida.
+  </p>
+  <div class="gallery"></div>
+  <div class="actions">
+    <a href="https://wa.me/57TU_NUMERO" target="_blank">Consultar por WhatsApp</a>
+    <button onclick="goHome()">Volver al inicio</button>
+  </div>
+</section>
+
+<script>
+  function openSection(id) {
+    document.querySelectorAll("section").forEach(s => s.style.display = "none");
+    document.getElementById(id).style.display = "block";
+    window.scrollTo(0, 0);
+  }
+
+  function goHome() {
+    document.querySelectorAll("section").forEach(s => s.style.display = "none");
+    window.scrollTo(0, 0);
+  }
+
+  // Cargar todas las imágenes automáticamente
+  const galleries = document.querySelectorAll(".gallery");
+
+  fetch('img/')
+    .then(() => {
+      galleries.forEach(gallery => {
+        // GitHub Pages no permite listar archivos automáticamente,
+        // por eso aquí SOLO mostramos las imágenes que ya subiste visualmente
+      });
+    });
+</script>
+
 </body>
 </html>
